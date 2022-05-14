@@ -12,6 +12,10 @@ export default class GuestCountryCard extends Component<GuestCountryCardArgs> {
 
       if (aRooms > bRooms) return -1;
       if (aRooms < bRooms) return 1;
+
+      if (a.change > b.change) return -1;
+      if (a.change < b.change) return 1;
+
       return 0;
     });
   }
