@@ -1,22 +1,18 @@
 import Component from '@glimmer/component';
-import { tracked } from '@glimmer/tracking';
 
 interface GuestCountryCardArgs {
   data: Array<Object>;
 }
 
 export default class GuestCountryCard extends Component<GuestCountryCardArgs> {
-  @tracked perPage = 5;
-  @tracked page = 1;
-
   get sortedItems() {
-    return this.args.data;
-  }
+    return this.args.data.sort((a: any, b: any) => {
+      const aRooms = a.value.nr_of_rooms;
+      const bRooms = b.value.nr_of_rooms;
 
-  get paginatedItems() {
-    const startIndex = (this.page - 1) * this.perPage;
-    const endIndex = startIndex + this.perPage;
-
-    return this.sortedItems.slice(startIndex, endIndex);
+      if (aRooms > bRooms) return -1;
+      if (aRooms < bRooms) return 1;
+      return 0;
+    });
   }
 }
