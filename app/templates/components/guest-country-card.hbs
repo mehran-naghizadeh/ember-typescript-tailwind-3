@@ -1,0 +1,49 @@
+<div
+  class="rounded-md overflow-hidden divide-y divide-gray-300"
+  style="height: 29em"
+  ...attributes
+>
+  <div
+    class="bg-gray-200 px-6 py-3 text-gray-900 font-bold flex items-center"
+    style="height: 4em"
+  >
+    Guest Country
+  </div>
+
+  <section
+    class="flex flex-col overflow-y-scroll divide-y divide-gray-300"
+    style="height: 25em"
+  >
+    {{#each this.sortedItems as |item|}}
+      <article class="bg-gray-200 px-6 py-3 text-gray-500" style="height: 5em">
+        <div class="flex gap-6">
+          <div class="flex-1 flex flex-col gap-1">
+            <div class="w-full flex gap-2 justify-between">
+              <div>{{item.countryName}}</div>
+              <div>{{item.value.nr_of_rooms}}</div>
+            </div>
+            <div class="h-8 flex items-center">
+              <div class="rounded-full bg-gray-300 w-full block h-2 overflow-hidden">
+                <div class="bg-blue-900 block h-full" style="width: {{item.ratio}}%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-1">
+            <div
+              class={{if (gt item.change 0) 'text-green-500' (if (lt item.change 0) 'text-red-500')}}
+            >
+              {{#unless (lt item.change 0)}}
+                +
+              {{/unless}}
+              {{item.change}}
+            </div>
+            <div class="h-8 flex items-center">
+              <div class="text-gray-500 font-light text-sm">vs. last Year</div>
+            </div>
+          </div>
+        </div>
+      </article>
+    {{/each}}
+  </section>
+</div>
