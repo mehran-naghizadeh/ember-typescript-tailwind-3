@@ -5,7 +5,7 @@ This app, originally created on Dec 17, 2021 is meant to serve as a template for
 ### The mistake
 Instead of creating `app/tailwind/config.js`, you should create `app/tailwind.config.js`. Then, in `ember-cli-build.js` import it like this:
 
-difff```
+diff```
 - require('tailwindcss')('./app/tailwind/config.js'),
 - + require('tailwindcss')('./app/tailwind.config.js'),,
 ```
