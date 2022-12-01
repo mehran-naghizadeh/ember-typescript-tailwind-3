@@ -7,7 +7,7 @@ Instead of creating `app/tailwind/config.js`, you should create `app/tailwind.co
 
 ```diff
 - require('tailwindcss')('./app/tailwind/config.js'),
-- + require('tailwindcss')('./app/tailwind.config.js'),,
++ require('tailwindcss')('./app/tailwind.config.js'),,
 ```
 
 ### The missing step
