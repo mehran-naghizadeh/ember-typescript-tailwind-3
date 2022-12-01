@@ -5,7 +5,7 @@ This app, originally created on Dec 17, 2021 is meant to serve as a template for
 ### The mistake
 Instead of creating `app/tailwind/config.js`, you should create `app/tailwind.config.js`. Then, in `ember-cli-build.js` import it like this:
 
-diff```
+```diff
 - require('tailwindcss')('./app/tailwind/config.js'),
 - + require('tailwindcss')('./app/tailwind.config.js'),,
 ```
@@ -14,13 +14,3 @@ diff```
 It is necessary to specify the content path in tailwind.config.js, like this;
 `content: ['./app/**/*.{hbs,js,ts}']`
 
-
-
-
-## Further Reading / Useful Links
-
-* [ember.js](https://emberjs.com/)
-* [ember-cli](https://ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
