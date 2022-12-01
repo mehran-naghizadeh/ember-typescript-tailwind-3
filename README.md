@@ -7,7 +7,7 @@ Instead of creating `app/tailwind/config.js`, you should create `app/tailwind.co
 
 ### The missing step
 It is necessary to specify the content path in tailwind.config.js, like this;
-`content: ['./app/**/*.{hbs,js}']`
+`content: ['./app/**/*.{hbs,js,ts}']`
 
 
 ## Prerequisites
